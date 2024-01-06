@@ -12,3 +12,5 @@ class New_Respons(BaseModel):
     message: str
 
 
+class Base:
+    pass
