@@ -65,3 +65,7 @@ def delete_person(id: int):
         return New_Respons(message = "Пользователь не найден")
     user_list.remove(user)
     return user_list
+
+
+def classes_router():
+    return None
