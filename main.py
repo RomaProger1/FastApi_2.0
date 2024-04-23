@@ -19,5 +19,10 @@ def p_index():
     return "<b> Hello World, FastAPI </b>"
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+POSTGRES_PORT = os.getenv("POSTGRES_PORT")
+POSTGRES_DB = os.getenv("POSTGRES_DB")
+POSTGRES_USER = os.getenv("POSTGRES_USER")
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
 if __name__ == "__main__":
    uvicorn.run(app,host="127.0.0.1", port=8000)
