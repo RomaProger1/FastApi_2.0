@@ -1,11 +1,10 @@
 from dotenv import load_dotenv
 import uvicorn
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Response, Path, Query, Body, Header
+from fastapi.responses import HTMLResponse, PlainTextResponse, JSONResponse, FileResponse
 from Public.users import users_router, classes_router
 from db import f
 import os
-
 # Загружаем переменные окружения из файла .env
 load_dotenv()
 
@@ -19,6 +18,6 @@ app.include_router(classes_router())
 def p_index():
     return "<b> Hello World, FastAPI </b>"
 
+DATABASE_URL = os.getenv("DATABASE_URL")
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # Используем порт, указанный в переменной окружения, или 8000 по умолчанию
-    uvicorn.run(app, host="0.0.0.0", port=port)  # Запускаем сервер на всех интерфейсах
+   uvicorn.run(app,host="127.0.0.1", port=8000)
